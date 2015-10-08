@@ -320,6 +320,37 @@ Attributes can be set when individual settings are performed. Some of the attrib
 
 For details, refer to \ `Official reference <http://docs.spring.io/spring-security/site/docs/3.2.7.RELEASE/reference/htmlsingle/#default-security-headers>`_\ .
 
+
+pom.xml settings
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+| When Spring Security is used, dependency below must be added to pom.xml.
+
+.. code-block:: xml
+
+    <dependency>
+        <groupId>org.terasoluna.gfw</groupId>
+        <artifactId>terasoluna-gfw-security-core</artifactId>  <!-- (1) -->
+    </dependency>
+
+    <dependency>
+        <groupId>org.terasoluna.gfw</groupId>
+        <artifactId>terasoluna-gfw-security-web</artifactId>  <!-- (2) -->
+    </dependency>
+
+.. tabularcolumns:: |p{0.10\linewidth}|p{0.90\linewidth}|
+.. list-table::
+   :header-rows: 1
+   :widths: 10 90
+
+   * - Sr. No.
+     - Description
+   * - | (1)
+     - | Since terasoluna-gfw-security-core is not web-dependent, 
+       | terasoluna-gfw-security-core alone should be added to dependency while using it from a domain level project
+   * - | (2)
+     - | terasoluan-gfw-web offers web related functions. Since it is also dependent on terasoluna-gfw-security-core,
+       | terasoluna-gfw-security-web alone should be added to dependency for Web project.
+
     
 .. raw:: latex
 
