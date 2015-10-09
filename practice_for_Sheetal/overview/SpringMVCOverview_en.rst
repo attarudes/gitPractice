@@ -44,46 +44,48 @@ Among the components explained previously, the extendable components are impleme
 Implementation of HandlerMapping
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Class hierarchy of ``HandlerMapping`` provided by Spring framework is shown below.
+Class hierarchy of \ ``HandlerMapping``\  provided by Spring framework is shown below.
 
 .. figure:: ./images/HandlerMapping-Hierarchy.png
    :alt: HandlerMapping Hierarchy
 
 
-Usually ``org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping`` is used. This class reads ``@RequestMapping`` annotation from the ``Controller`` and uses the method of ``Controller`` that matches with URL as Handler class.
+| Usually \ ``org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping``\  is used. 
+| This class reads \ ``@RequestMapping``\  annotation from the \ ``Controller``\  defined in Bean,
+| and uses the method of \ ``Controller``\  that matches with URL as Handler class.
 
-In Spring3.1, ``RequestMappingHandlerMapping`` is enabled by default when ``<mvc:annotation-driven>`` is set in Bean definition file read by ``DispatcherServlet``.
-(For the settings which get enabled with the use of ``<mvc:annotation-driven>`` annotation, refer
-`Web MVC framework <http://docs.spring.io/spring/docs/4.1.7.RELEASE/spring-framework-reference/html/mvc.html#mvc-config-enable>`_\.)
+| From Spring3.1, \ ``RequestMappingHandlerMapping``\  is enabled by default, 
+| when \ ``<mvc:annotation-driven>``\  is set in Bean definition file read by \ ``DispatcherServlet``\ .
+| (For the settings which get enabled with the use of \ ``<mvc:annotation-driven>``\  annotation, refer to \ `Web MVC framework <http://docs.spring.io/spring/docs/4.1.7.RELEASE/spring-framework-reference/html/mvc.html#mvc-config-enable>`_\ .)
 
 
 Implementation of HandlerAdapter
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Class hierarchy of ``HandlerAdapter`` provided by Spring framework is shown below.
+Class hierarchy of \ ``HandlerAdapter``\  provided by Spring framework is shown below.
 
 .. figure:: ./images/HandlerAdapter-Hierarchy.png
    :alt: HandlerAdapter Hierarchy
 
-Usually ``org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter`` is used.
-``RequestMappingHandlerAdapter`` class calls the method of handler class (``Controller``) selected by ``HandlerMapping``.
-In Spring 3.1, this class is also configured by default throught ``<mvc:annotation-driven>``.
+| Usually \ ``org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter``\  is used.
+| ``RequestMappingHandlerAdapter`` class calls the method of handler class (\ ``Controller``\ ) selected by \ ``HandlerMapping``\ .
+| In Spring 3.1, this class is also configured by default throught \ ``<mvc:annotation-driven>``\ .
 
 Implementation of ViewResolver
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Classes that implement ``ViewResolver`` provided by Spring framework and dependent libraries are shown below.
+Classes that implement \ ``ViewResolver``\  provided by Spring framework and dependent libraries are shown below.
 
 .. figure:: ./images/ViewResolver-Hierarchy.png
    :alt: ViewResolver Hierarchy
 
 Normally (When JSP is used),
 
-* ``org.springframework.web.servlet.view.InternalResourceViewResolver`` is used, 
+* \ ``org.springframework.web.servlet.view.InternalResourceViewResolver``\  is used, 
 
 however, when template engine Tiles is to be used
 
-* ``org.springframework.web.servlet.view.tiles3.TilesViewResolver``
+* \ ``org.springframework.web.servlet.view.tiles3.TilesViewResolver``\ 
 
 and when stream is to be returned for file download
 
